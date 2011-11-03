@@ -1,3 +1,9 @@
+# revision 21014
+# category Package
+# catalog-ctan /macros/latex/contrib/breakcites
+# catalog-date 2010-12-11 10:17:50 +0100
+# catalog-license noinfo
+# catalog-version undef
 Name:		texlive-breakcites
 Version:	20101211
 Release:	1
@@ -42,6 +48,7 @@ undesirable behaviour of the command as provided in LaTeX 2.09.
 %doc %{_texmfdistdir}/doc/latex/breakcites/README
 %doc %{_texmfdistdir}/doc/latex/breakcites/breakcites.pdf
 %doc %{_texmfdistdir}/doc/latex/breakcites/breakcites.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -52,3 +59,5 @@ undesirable behaviour of the command as provided in LaTeX 2.09.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
