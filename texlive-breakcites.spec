@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 Makes a very minor change to the operation of the \cite
@@ -27,20 +25,12 @@ LaTeX; however, there remain packages that restore the
 undesirable behaviour of the command as provided in LaTeX 2.09.
 (Note that neither cite nor natbib make this mistake.).
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -49,7 +39,6 @@ undesirable behaviour of the command as provided in LaTeX 2.09.
 %doc %{_texmfdistdir}/doc/latex/breakcites/README
 %doc %{_texmfdistdir}/doc/latex/breakcites/breakcites.pdf
 %doc %{_texmfdistdir}/doc/latex/breakcites/breakcites.tex
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -60,5 +49,3 @@ undesirable behaviour of the command as provided in LaTeX 2.09.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
