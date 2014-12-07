@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-breakcites
 Version:	20101211
-Release:	8
+Release:	9
 Summary:	Ensure that multiple citations may break at line end
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/breakcites
