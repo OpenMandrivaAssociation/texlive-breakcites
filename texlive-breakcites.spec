@@ -5,7 +5,7 @@
 # catalog-license noinfo
 # catalog-version undef
 Name:		texlive-breakcites
-Version:	20170414
+Version:	20180303
 Release:	1
 Summary:	Ensure that multiple citations may break at line end
 Group:		Publishing
