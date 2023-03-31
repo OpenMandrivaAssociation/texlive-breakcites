@@ -1,6 +1,6 @@
 Name:		texlive-breakcites
 Version:	21014
-Release:	1
+Release:	2
 Summary:	Ensure that multiple citations may break at line end
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/breakcites
